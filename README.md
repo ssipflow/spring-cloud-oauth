@@ -8,7 +8,7 @@
 
 ## RSA Key Generation
 
-``sh
+```sh
 keytool -genkeypair \
        -alias msa \
        -keyalg RSA \
@@ -18,4 +18,4 @@ keytool -genkeypair \
        -storepass new1234!
 keytool -export -keystore ./msa.jks -alias msa -file msa.cer
 openssl x509 -inform der -in ./msa.cer -pubkey -noout
-``
+```
