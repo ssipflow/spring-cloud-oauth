@@ -46,7 +46,7 @@ public class AutorizationConfiguration extends AuthorizationServerConfigurerAdap
     public JwtAccessTokenConverter jwtAccessTokenConverter() {
         KeyStoreKeyFactory factory =  new KeyStoreKeyFactory(new ClassPathResource("msa.jks"), "new1234!".toCharArray());
         JwtAccessTokenConverter converter = new JwtAccessTokenConverter();
-        converter.setKeyPair(factory.getKeyPair("sicc"));
+        converter.setKeyPair(factory.getKeyPair("msa"));
         return converter;
     }
 
