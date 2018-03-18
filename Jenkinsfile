@@ -9,14 +9,6 @@ node {
         commitHash = git.GIT_COMMIT
     }
 
-    stage('Test') {
-        try{
-            sh './gradlew check || true'
-        } finally {
-            junit 'build/test-results/**/*.xml'
-        }
-    }
-
     stage('Build') {
         sh './gradlew build -x test'
     }
