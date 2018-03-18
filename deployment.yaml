@@ -1,0 +1,28 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: oauth-service
+  labels:
+    app: oauth-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: oauth-service
+  template:
+    metadata:
+      labels:
+        app: oauth-service
+        version: latest
+    spec:
+      hostname: oauth-service
+      subdomain: oauth-service
+      containers:
+      - name: oauth-service
+        image: hubtea/oauth-service:latest
+        env:
+        - name: SPRING_PROFILES_ACTIVE
+          value: dev
+        ports:
+        - name: http
+          containerPort: 8080
