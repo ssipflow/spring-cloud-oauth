@@ -31,7 +31,7 @@ public class HttpClientDetailsService implements ClientDetailsService {
     public ClientDetails loadClientByClientId(String clientId) throws InvalidClientException {
         BaseClientDetails clientDetails = new BaseClientDetails();
 
-        UriComponents uriComponents = UriComponentsBuilder.fromUriString("http://CLIENT/client/{clientId}")
+        UriComponents uriComponents = UriComponentsBuilder.fromUriString("http://CLIENT-SERVICE/client/{clientId}")
                 .buildAndExpand(clientId)
                 .encode();
 

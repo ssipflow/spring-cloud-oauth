@@ -20,7 +20,7 @@ public class HttpUserDetailsService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        UriComponents uriComponents = UriComponentsBuilder.fromUriString("http://USER/user/{userId}")
+        UriComponents uriComponents = UriComponentsBuilder.fromUriString("http://USER-SERVICE/user/{userId}")
                 .buildAndExpand(username)
                 .encode();
 
