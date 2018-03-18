@@ -4,3 +4,8 @@ spring:
   cloud:
     config:
       uri: http://config.development.svc.cluster.local:8888
+
+
+
+
+

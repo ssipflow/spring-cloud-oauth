@@ -12,7 +12,7 @@
 keytool -genkeypair \
        -alias msa \
        -keyalg RSA \
-       -dname "CN=Auth,OU=,O=sicc,L=Seoul,S=Seoul,C=KR" \
+       -dname "CN=Auth,OU=,O=msa,L=Seoul,S=Seoul,C=KR" \
        -keypass new1234! \
        -keystore msa.jks \
        -storepass new1234!
