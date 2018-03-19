@@ -4,12 +4,14 @@ import io.toanyone.oauth.domain.Client;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.http.HttpEntity;
 import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.oauth2.common.exceptions.InvalidClientException;
 import org.springframework.security.oauth2.provider.ClientDetails;
 import org.springframework.security.oauth2.provider.ClientDetailsService;
 import org.springframework.security.oauth2.provider.client.BaseClientDetails;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 import org.springframework.web.client.RestTemplate;
@@ -19,13 +21,14 @@ import org.springframework.web.util.UriComponentsBuilder;
 import java.util.Arrays;
 
 
-@Service
+@Component
 public class HttpClientDetailsService implements ClientDetailsService {
 
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Autowired
     private RestTemplate restTemplate;
+
 
     @Override
     public ClientDetails loadClientByClientId(String clientId) throws InvalidClientException {

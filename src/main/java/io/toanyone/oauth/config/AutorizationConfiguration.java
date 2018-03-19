@@ -21,12 +21,15 @@ import org.springframework.security.oauth2.provider.token.store.KeyStoreKeyFacto
 public class AutorizationConfiguration extends AuthorizationServerConfigurerAdapter {
 
     @Autowired
+    private HttpClientDetailsService clientDetailsService;
+
+    @Autowired
     @Qualifier("authenticationManagerBean")
     private AuthenticationManager authenticationManager;
 
     @Override
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
-        clients.withClientDetails(new HttpClientDetailsService());
+        clients.withClientDetails(clientDetailsService);
     }
 
 
