@@ -19,7 +19,7 @@ spec:
       subdomain: oauth-service
       containers:
       - name: oauth-service
-        image: hubtea/oauth-service:latest
+        image: ssipflow/oauth-service:latest
         env:
         - name: SPRING_PROFILES_ACTIVE
           value: dev
